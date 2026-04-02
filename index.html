@@ -8,119 +8,122 @@
 
 <style>
 :root {
-    --bg: #1a1a2e;
-    --text: #eaeaea;
-    --card: #16213e;
+    --bg: #0f0f1a;
+    --card: #1a1a2e;
+    --text: #f1f1f1;
     --accent: #16c79a;
-}
-
-/* Light mode */
-.light-mode {
-    --bg: #f5f5f5;
-    --text: #111;
-    --card: #ffffff;
+    --muted: #aaaaaa;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
     color: var(--text);
-    transition: background 0.3s, color 0.3s;
 }
 
-/* Navbar */
+/* NAV */
 nav {
-    position: sticky;
-    top: 0;
-    background: var(--card);
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
+    padding: 20px 40px;
+    font-size: 0.9rem;
+    color: var(--muted);
 }
 
-nav h1 {
-    margin: 0;
-    font-size: 1.2rem;
+nav span {
     color: var(--accent);
+    font-weight: bold;
 }
 
-.toggle-btn {
-    background: none;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 6px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* Header */
-header {
+/* HERO */
+.hero {
+    padding: 80px 20px 40px;
     text-align: center;
-    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
-header h2 {
-    font-size: 2.5rem;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
     color: var(--accent);
 }
 
-header p {
-    max-width: 700px;
-    margin: 20px auto;
+.hero p {
+    font-size: 1.2rem;
+    color: var(--muted);
     line-height: 1.6;
 }
 
-/* Grid */
-.container {
-    padding: 40px 20px;
-}
-
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 60px 40px;
 }
 
-/* Cards */
+/* CARD */
 .card {
     background: var(--card);
-    padding: 20px;
-    border-radius: 12px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.6s ease forwards;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
-.card h3 {
-    color: var(--accent);
+/* CARD IMAGE */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
+/* CARD CONTENT */
+.card-content {
+    padding: 20px;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text);
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 10px 0 15px;
+}
+
+/* LINK */
 .card a {
     color: var(--accent);
     text-decoration: none;
     font-weight: bold;
 }
 
-/* Animation */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* TAG */
+.tag {
+    position: absolute;
+    background: var(--bg);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    top: 10px;
+    left: 10px;
+    border: 1px solid var(--muted);
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 600px) {
-    header h2 {
-        font-size: 2rem;
+    .hero h1 {
+        font-size: 2.2rem;
     }
 }
 </style>
@@ -130,50 +133,59 @@ header p {
 <body>
 
 <nav>
-    <h1>SF Crime</h1>
-    <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+    <div>A data story by <span>Nick Tahmasebi</span></div>
+    <div>San Francisco Crime Analysis</div>
 </nav>
 
-<header>
-    <h2>SF Crime: Two Decades of Data</h2>
+<section class="hero">
+    <h1>SF Crime: Two Decades of Data</h1>
     <p>
-        This portfolio explores long-term trends in San Francisco crime data using both static and interactive visualizations.
-        The goal is to uncover patterns across time, geography, and crime categories through data-driven storytelling.
+        A data-driven exploration of crime trends in San Francisco over the past twenty years.
+        From temporal patterns to geographic distributions, this project uncovers how crime evolves across the city.
     </p>
-</header>
+</section>
 
-<div class="container">
-    <div class="grid">
+<section class="grid">
 
 ```
-    <div class="card">
-        <h3>📈 Yearly Crime Trends</h3>
-        <p>Overview of how major crime categories have changed over time.</p>
-        <a href="images/yearly_crime_trends.png">View visualization →</a>
+<div class="card">
+    <div style="position:relative;">
+        <span class="tag">Trend</span>
+        <img src="images/yearly_crime_trends.png">
     </div>
-
-    <div class="card">
-        <h3>📊 Hourly Crime Patterns</h3>
-        <p>Interactive chart showing how crime varies throughout the day.</p>
-        <a href="visualizations/crime_hourly_interactive.html">Explore chart →</a>
+    <div class="card-content">
+        <h2>Yearly Crime Trends</h2>
+        <p>How major crime categories have shifted over time.</p>
+        <a href="images/yearly_crime_trends.png">Read more →</a>
     </div>
+</div>
 
-    <div class="card">
-        <h3>🗺️ Crime Distribution Map</h3>
-        <p>Geographic distribution of crime across San Francisco districts.</p>
+<div class="card">
+    <div style="position:relative;">
+        <span class="tag">Interactive</span>
+        <img src="https://via.placeholder.com/600x400/16213e/16c79a?text=Hourly+Chart">
+    </div>
+    <div class="card-content">
+        <h2>Hourly Crime Patterns</h2>
+        <p>Explore how crime fluctuates throughout the day.</p>
+        <a href="visualizations/crime_hourly_interactive.html">Explore →</a>
+    </div>
+</div>
+
+<div class="card">
+    <div style="position:relative;">
+        <span class="tag">Map</span>
+        <img src="https://via.placeholder.com/600x400/16213e/16c79a?text=Crime+Map">
+    </div>
+    <div class="card-content">
+        <h2>Crime Distribution Map</h2>
+        <p>See how crime varies across San Francisco districts.</p>
         <a href="visualizations/sf_crime_map.html">View map →</a>
     </div>
-
 </div>
 ```
 
-</div>
-
-<script>
-function toggleMode() {
-    document.body.classList.toggle("light-mode");
-}
-</script>
+</section>
 
 </body>
 </html>
