@@ -1,19 +1,126 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-    <title>My Data Viz Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SF Crime: Two Decades of Data</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #eaeaea;
+}
+
+/* Header */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #16213e, #1a1a2e);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #16c79a;
+}
+
+header p {
+    max-width: 700px;
+    margin: 20px auto 0;
+    line-height: 1.6;
+}
+
+/* Grid layout */
+.container {
+    padding: 40px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #16c79a;
+}
+
+.card p {
+    font-size: 0.95rem;
+    margin: 10px 0 15px;
+}
+
+/* Links */
+.card a {
+    text-decoration: none;
+    color: #16c79a;
+    font-weight: bold;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+
 </head>
+
 <body>
-    <h1>Hello World!</h1>
-    <p>This site will soon contain interactive data visualizations about crime in San Francisco.</p>
+
+<header>
+    <h1>SF Crime: Two Decades of Data</h1>
+    <p>
+        This portfolio explores long-term trends in San Francisco crime data using both static and interactive visualizations.
+        The goal is to uncover patterns across time, geography, and crime categories through data-driven storytelling.
+    </p>
+</header>
+
+<div class="container">
+    <div class="grid">
+
+```
+    <div class="card">
+        <h2>📈 Yearly Crime Trends</h2>
+        <p>Overview of how major crime categories have changed over time.</p>
+        <a href="images/yearly_crime_trends.png">View visualization →</a>
+    </div>
+
+    <div class="card">
+        <h2>📊 Hourly Crime Patterns</h2>
+        <p>Interactive chart showing how crime varies throughout the day.</p>
+        <a href="visualizations/crime_hourly_interactive.html">Explore chart →</a>
+    </div>
+
+    <div class="card">
+        <h2>🗺️ Crime Distribution Map</h2>
+        <p>Geographic distribution of crime across San Francisco districts.</p>
+        <a href="visualizations/sf_crime_map.html">View map →</a>
+    </div>
+
+</div>
+```
+
+</div>
+
 </body>
-
-<h2>📈 Yearly Crime Trends</h2>
-<img src="images/yearly_crime_trends.png" style="max-width:100%;">
-
-<h2>🗺️ Crime Map</h2>
-<iframe src="visualizations/sf_crime_map.html" width="100%" height="600"></iframe>
-
-<h2>📊 Hourly Crime Patterns</h2>
-<iframe src="visualizations/crime_hourly_interactive.html" width="100%" height="600"></iframe>
 </html>
