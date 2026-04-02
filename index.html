@@ -7,34 +7,73 @@
 <title>SF Crime: Two Decades of Data</title>
 
 <style>
+:root {
+    --bg: #1a1a2e;
+    --text: #eaeaea;
+    --card: #16213e;
+    --accent: #16c79a;
+}
+
+/* Light mode */
+.light-mode {
+    --bg: #f5f5f5;
+    --text: #111;
+    --card: #ffffff;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1a1a2e;
-    color: #eaeaea;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Navbar */
+nav {
+    position: sticky;
+    top: 0;
+    background: var(--card);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.toggle-btn {
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* Header */
 header {
-    width: 100%;
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #16213e, #1a1a2e);
 }
 
-header h1 {
-    margin: 0;
+header h2 {
     font-size: 2.5rem;
-    color: #16c79a;
+    color: var(--accent);
 }
 
 header p {
     max-width: 700px;
-    margin: 20px auto 0;
+    margin: 20px auto;
     line-height: 1.6;
 }
 
-/* Grid layout */
+/* Grid */
 .container {
     padding: 40px 20px;
 }
@@ -47,37 +86,40 @@ header p {
 
 /* Cards */
 .card {
-    background-color: #16213e;
+    background: var(--card);
     padding: 20px;
     border-radius: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-.card h2 {
-    margin-top: 0;
-    color: #16c79a;
+.card h3 {
+    color: var(--accent);
 }
 
-.card p {
-    font-size: 0.95rem;
-    margin: 10px 0 15px;
-}
-
-/* Links */
 .card a {
+    color: var(--accent);
     text-decoration: none;
-    color: #16c79a;
     font-weight: bold;
 }
 
-/* Mobile tweaks */
+/* Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
-    header h1 {
+    header h2 {
         font-size: 2rem;
     }
 }
@@ -87,8 +129,13 @@ header p {
 
 <body>
 
+<nav>
+    <h1>SF Crime</h1>
+    <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+</nav>
+
 <header>
-    <h1>SF Crime: Two Decades of Data</h1>
+    <h2>SF Crime: Two Decades of Data</h2>
     <p>
         This portfolio explores long-term trends in San Francisco crime data using both static and interactive visualizations.
         The goal is to uncover patterns across time, geography, and crime categories through data-driven storytelling.
@@ -100,19 +147,19 @@ header p {
 
 ```
     <div class="card">
-        <h2>📈 Yearly Crime Trends</h2>
+        <h3>📈 Yearly Crime Trends</h3>
         <p>Overview of how major crime categories have changed over time.</p>
         <a href="images/yearly_crime_trends.png">View visualization →</a>
     </div>
 
     <div class="card">
-        <h2>📊 Hourly Crime Patterns</h2>
+        <h3>📊 Hourly Crime Patterns</h3>
         <p>Interactive chart showing how crime varies throughout the day.</p>
         <a href="visualizations/crime_hourly_interactive.html">Explore chart →</a>
     </div>
 
     <div class="card">
-        <h2>🗺️ Crime Distribution Map</h2>
+        <h3>🗺️ Crime Distribution Map</h3>
         <p>Geographic distribution of crime across San Francisco districts.</p>
         <a href="visualizations/sf_crime_map.html">View map →</a>
     </div>
@@ -121,6 +168,12 @@ header p {
 ```
 
 </div>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("light-mode");
+}
+</script>
 
 </body>
 </html>
