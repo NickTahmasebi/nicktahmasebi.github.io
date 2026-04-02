@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SF Crime: Two Decades of Data</title>
 
 <style>
@@ -15,20 +16,33 @@
     --muted: #aaaaaa;
 }
 
+/* Light mode */
+.light-mode {
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --text: #111;
+    --muted: #555;
+}
+
+/* Base */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
+    transition: 0.3s;
 }
 
-/* NAV */
+/* NAVBAR */
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
-    font-size: 0.9rem;
-    color: var(--muted);
+    padding: 15px 30px;
+    background: var(--card);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 nav span {
@@ -36,22 +50,29 @@ nav span {
     font-weight: bold;
 }
 
+button {
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 /* HERO */
 .hero {
-    padding: 80px 20px 40px;
     text-align: center;
-    max-width: 900px;
-    margin: auto;
+    padding: 80px 20px 40px;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
     color: var(--accent);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
     color: var(--muted);
     line-height: 1.6;
 }
@@ -69,36 +90,42 @@ nav span {
     background: var(--card);
     border-radius: 14px;
     overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: 0.25s;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
-/* CARD IMAGE */
-.card img {
+/* IMAGE / THUMB */
+.card img,
+.thumb {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-/* CARD CONTENT */
+/* Placeholder block */
+.thumb {
+    background: #0f3460;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* CONTENT */
 .card-content {
     padding: 20px;
 }
 
 .card h2 {
     margin: 0;
-    font-size: 1.3rem;
-    color: var(--text);
 }
 
 .card p {
-    font-size: 0.95rem;
     color: var(--muted);
-    margin: 10px 0 15px;
 }
 
 /* LINK */
@@ -111,13 +138,12 @@ nav span {
 /* TAG */
 .tag {
     position: absolute;
+    top: 10px;
+    left: 10px;
     background: var(--bg);
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.75rem;
-    top: 10px;
-    left: 10px;
-    border: 1px solid var(--muted);
 }
 
 /* MOBILE */
@@ -134,7 +160,7 @@ nav span {
 
 <nav>
     <div>A data story by <span>Nick Tahmasebi</span></div>
-    <div>San Francisco Crime Analysis</div>
+    <button onclick="toggleMode()">Toggle Mode</button>
 </nav>
 
 <section class="hero">
@@ -148,11 +174,9 @@ nav span {
 <section class="grid">
 
 ```
+<!-- IMAGE -->
 <div class="card">
-    <div style="position:relative;">
-        <span class="tag">Trend</span>
-        <img src="images/yearly_crime_trends.png">
-    </div>
+    <img src="images/yearly_crime_trends.png">
     <div class="card-content">
         <h2>Yearly Crime Trends</h2>
         <p>How major crime categories have shifted over time.</p>
@@ -160,11 +184,9 @@ nav span {
     </div>
 </div>
 
+<!-- PLOTLY -->
 <div class="card">
-    <div style="position:relative;">
-        <span class="tag">Interactive</span>
-        <img src="https://via.placeholder.com/600x400/16213e/16c79a?text=Hourly+Chart">
-    </div>
+    <div class="thumb">Interactive Chart</div>
     <div class="card-content">
         <h2>Hourly Crime Patterns</h2>
         <p>Explore how crime fluctuates throughout the day.</p>
@@ -172,11 +194,9 @@ nav span {
     </div>
 </div>
 
+<!-- MAP -->
 <div class="card">
-    <div style="position:relative;">
-        <span class="tag">Map</span>
-        <img src="https://via.placeholder.com/600x400/16213e/16c79a?text=Crime+Map">
-    </div>
+    <div class="thumb">Crime Map</div>
     <div class="card-content">
         <h2>Crime Distribution Map</h2>
         <p>See how crime varies across San Francisco districts.</p>
@@ -186,6 +206,12 @@ nav span {
 ```
 
 </section>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("light-mode");
+}
+</script>
 
 </body>
 </html>
