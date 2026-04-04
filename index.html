@@ -9,19 +9,20 @@
 
 <style>
 :root {
-    --bg: #0f0f1a;
-    --card: #1a1a2e;
-    --text: #f1f1f1;
-    --accent: #16c79a;
-    --muted: #aaaaaa;
+    --bg: #faeae6;
+    --card: #ffffff;
+    --text: #111111;
+    --accent: #e8186d;
+    --muted: #666666;
 }
 
-/* Light mode */
-.light-mode {
-    --bg: #f5f5f5;
-    --card: #ffffff;
-    --text: #111;
-    --muted: #555;
+/* Dark mode */
+.dark-mode {
+    --bg: #1a0a0f;
+    --card: #2a1520;
+    --text: #f1f1f1;
+    --accent: #e8186d;
+    --muted: #aaaaaa;
 }
 
 /* Base */
@@ -42,7 +43,7 @@ nav {
     justify-content: space-between;
     padding: 15px 30px;
     background: var(--card);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 2px solid #111111;
 }
 
 nav span {
@@ -107,7 +108,7 @@ button {
 
 /* Placeholder block */
 .thumb {
-    background: #0f3460;
+    background: #fcd5cc;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -209,7 +210,7 @@ button {
 
 <script>
 function toggleMode() {
-    document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("dark-mode");
 }
 </script>
 
