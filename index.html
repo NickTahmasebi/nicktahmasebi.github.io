@@ -281,41 +281,17 @@
 </div>
 </div>
 </section>
-<!-- Comparison Section -->
-<section class="bg-primary-container text-on-primary py-32 overflow-hidden">
+<!-- Seasonal Ridgeline Section -->
+<section class="bg-primary-container text-on-primary py-24 overflow-hidden">
 <div class="max-w-7xl mx-auto px-8">
-<div class="text-center max-w-3xl mx-auto mb-24">
-<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6">Day vs. Night Dynamics</h2>
-<p class="text-on-primary-container text-lg font-light">Comparing temporal distributions reveals fundamental differences in urban behavior and risk profiles.</p>
+<div class="max-w-3xl mx-auto mb-16">
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6">The Rhythm of Crime Across the Seasons</h2>
+<p class="text-on-primary-container text-lg font-light">The four crimes don't just peak at night — they each follow a distinct daily rhythm that shifts with the seasons. Burglary follows the light. Robbery follows the crowd. Prostitution and arson belong almost entirely to the dark.</p>
 </div>
-<div class="grid md:grid-cols-2 gap-px bg-on-primary-container/20">
-<!-- Day Distribution -->
-<div class="p-16 flex flex-col items-center">
-<span class="material-symbols-outlined text-5xl mb-8" data-icon="light_mode">light_mode</span>
-<h3 class="text-xl font-bold uppercase tracking-widest mb-12">Day (06:00 - 18:00)</h3>
-<div class="w-64 h-64 rounded-full border-[16px] border-on-primary-container/20 relative flex items-center justify-center">
-<div class="absolute inset-0 rounded-full border-[16px] border-tertiary-fixed-dim" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%);"></div>
-<div class="text-center">
-<p class="text-5xl font-black">62%</p>
-<p class="text-xs font-bold uppercase tracking-widest opacity-60">Traffic/Commerce</p>
+<div class="bg-primary-container rounded-xl overflow-hidden">
+<img src="images/crime_ridgeline_seasonal.png" alt="Seasonal ridgeline chart showing hourly crime patterns for Prostitution, Robbery, Burglary and Arson across Winter, Spring, Summer and Fall in San Francisco 2003-2025" class="w-full"/>
 </div>
-</div>
-<p class="mt-12 text-center text-on-primary-container leading-relaxed">Daytime activity is largely driven by traffic violations and commercial disputes concentrated in business hubs.</p>
-</div>
-<!-- Night Distribution -->
-<div class="p-16 flex flex-col items-center">
-<span class="material-symbols-outlined text-5xl mb-8" data-icon="dark_mode" data-weight="fill" style="font-variation-settings: 'FILL' 1;">dark_mode</span>
-<h3 class="text-xl font-bold uppercase tracking-widest mb-12">Night (18:00 - 06:00)</h3>
-<div class="w-64 h-64 rounded-full border-[16px] border-on-primary-container/20 relative flex items-center justify-center">
-<div class="absolute inset-0 rounded-full border-[16px] border-error" style="clip-path: polygon(50% 50%, 50% 0%, 80% 0%, 80% 100%, 50% 100%);"></div>
-<div class="text-center">
-<p class="text-5xl font-black">38%</p>
-<p class="text-xs font-bold uppercase tracking-widest opacity-60">Property/Transit</p>
-</div>
-</div>
-<p class="mt-12 text-center text-on-primary-container leading-relaxed">Nighttime incidents, though lower in total volume, show a higher concentration of property-related occurrences.</p>
-</div>
-</div>
+<p class="text-on-primary-container/60 text-sm mt-6 max-w-3xl">Each row shows the 24-hour distribution of one crime type, min-max scaled so the shape of the rhythm is visible regardless of total volume. Sunrise and sunset bands mark the transition between day and night for each season. Peaks are annotated at the hour of highest activity.</p>
 </div>
 </section>
 <!-- Final Thought / CTA -->
