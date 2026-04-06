@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SF Crime: 24 Hours in San Fransisco</title>
+<title>SF Crime: 24 Hours in San Francisco</title>
 
 <style>
 :root {
@@ -19,7 +19,6 @@
     --border: #e5e3df;
 }
 
-/* DARK MODE */
 .dark-mode {
     --bg: #121212;
     --card: #1e1e1e;
@@ -32,7 +31,6 @@
     --border: #2a2a2a;
 }
 
-/* BASE */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -50,8 +48,8 @@ nav {
     justify-content: space-between;
     padding: 16px 32px;
 
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
 
     border-bottom: 1px solid var(--border);
 }
@@ -61,19 +59,16 @@ nav span {
     font-weight: 600;
 }
 
-/* ========================= */
-/* SCROLLYTELLING CONTAINER */
-/* ========================= */
+/* SCROLLYTELLING */
 .graph-container {
     position: relative;
     height: 200vh;
 }
 
-/* STICKY GRAPH */
 .graph {
     position: sticky;
-    top: 60px;
-    height: calc(100vh - 60px);
+    top: 0;               /* FIXED */
+    height: 100vh;        /* FULL SCREEN */
 
     display: flex;
     align-items: center;
@@ -88,15 +83,14 @@ nav span {
     object-fit: contain;
 }
 
-/* CONTENT OVERLAY */
 .content {
     position: relative;
     z-index: 2;
 }
 
-/* HERO (EARLY OVERLAY FIX) */
+/* HERO */
 .hero {
-    margin-top: -70vh;   /* pulls text UP earlier */
+    margin-top: -70vh;
     padding-top: 60vh;
 
     height: 100vh;
@@ -175,16 +169,8 @@ nav span {
     color: var(--muted);
 }
 
-/* SPACER */
 .spacer {
     height: 100vh;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2.2rem;
-    }
 }
 </style>
 </head>
@@ -196,15 +182,12 @@ nav span {
     <button onclick="toggleMode()">Toggle Mode</button>
 </nav>
 
-<!-- SCROLLYTELLING SECTION -->
 <section class="graph-container">
 
-    <!-- STICKY GRAPH -->
     <div class="graph">
         <img src="images/prostitution_ridgeline.png">
     </div>
 
-    <!-- TEXT OVERLAY -->
     <div class="content">
         <section class="hero">
             <div>
@@ -218,7 +201,6 @@ nav span {
 
 </section>
 
-<!-- NORMAL CONTENT -->
 <section class="grid">
 
     <div class="card">
@@ -226,14 +208,6 @@ nav span {
         <div class="card-content">
             <h2>Yearly Crime Trends</h2>
             <p>How major crime categories have shifted over time.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="thumb">Interactive Chart</div>
-        <div class="card-content">
-            <h2>Hourly Crime Patterns</h2>
-            <p>Explore how crime fluctuates throughout the day.</p>
         </div>
     </div>
 
