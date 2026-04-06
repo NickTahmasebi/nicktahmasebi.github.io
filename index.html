@@ -156,21 +156,21 @@
       <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm p-6 md:p-8">
   
         <div class="grid lg:grid-cols-3 gap-10 items-start">
-  
-          <!-- LEFT: MAP / GRAPH -->
-          <div class="lg:col-span-2">
-            <div class="rounded-xl overflow-hidden border border-outline-variant/10 bg-white pb-2">
-              <iframe 
-                src="visualizations/crime_hourly_heatmap.html" 
-                class="w-full h-[600px] md:h-[650px] lg:h-[700px]"
-                frameborder="0"
-                scrolling="no">
-              </iframe>
+
+            <!-- LEFT -->
+            <div class="lg:col-span-2">
+              <div class="rounded-xl overflow-hidden border border-outline-variant/10 bg-white h-fit">
+                <iframe 
+                  src="visualizations/crime_hourly_heatmap.html" 
+                  class="w-full h-[520px] md:h-[580px] lg:h-[620px]"
+                  frameborder="0"
+                  scrolling="no">
+                </iframe>
+              </div>
             </div>
-          </div>
-  
-          <!-- RIGHT: INFO PANEL -->
-          <div class="space-y-6 sticky top-28">
+          
+            <!-- RIGHT -->
+            <div class="space-y-6 sticky top-28 self-start">
   
             <!-- Legend -->
             <div class="p-5 bg-surface-container-low rounded-xl">
