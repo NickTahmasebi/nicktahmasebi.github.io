@@ -281,19 +281,42 @@
 </div>
 </div>
 </section>
-<!-- Seasonal Ridgeline Section -->
-<section class="bg-primary-container text-on-primary py-24 overflow-hidden">
-<div class="max-w-7xl mx-auto px-8">
-<div class="max-w-3xl mx-auto mb-16">
-<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6">The Rhythm of Crime Across the Seasons</h2>
-<p class="text-on-primary-container text-lg font-light">The four crimes don't just peak at night — they each follow a distinct daily rhythm that shifts with the seasons. Burglary follows the light. Robbery follows the crowd. Prostitution and arson belong almost entirely to the dark.</p>
-</div>
-<div class="bg-primary-container rounded-xl overflow-hidden">
-<img src="images/crime_ridgeline_seasonal.png" alt="Seasonal ridgeline chart showing hourly crime patterns for Prostitution, Robbery, Burglary and Arson across Winter, Spring, Summer and Fall in San Francisco 2003-2025" class="w-full"/>
-</div>
-<p class="text-on-primary-container/60 text-sm mt-6 max-w-3xl">Each row shows the 24-hour distribution of one crime type, min-max scaled so the shape of the rhythm is visible regardless of total volume. Sunrise and sunset bands mark the transition between day and night for each season. Peaks are annotated at the hour of highest activity.</p>
-</div>
-</section>
+<!-- Seasonal Ridgeline Section (Redesigned) -->
+<section class="bg-primary-container text-on-primary py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8">
+  
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+  
+        <!-- LEFT: TEXT -->
+        <div class="max-w-xl">
+          <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6">
+            The Rhythm of Crime Across the Seasons
+          </h2>
+  
+          <p class="text-on-primary-container text-lg font-light leading-relaxed mb-8">
+            The four crimes don't just peak at night — they each follow a distinct daily rhythm that shifts with the seasons. Burglary follows the light. Robbery follows the crowd. Prostitution and arson belong almost entirely to the dark.
+          </p>
+  
+          <p class="text-on-primary-container/60 text-sm leading-relaxed">
+            Each row shows the 24-hour distribution of one crime type, min-max scaled so the shape of the rhythm is visible regardless of total volume. Sunrise and sunset bands mark the transition between day and night for each season. Peaks are annotated at the hour of highest activity.
+          </p>
+        </div>
+  
+        <!-- RIGHT: IMAGE -->
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <img 
+              src="images/crime_ridgeline_seasonal.png" 
+              alt="Seasonal ridgeline chart showing hourly crime patterns"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
 <!-- Final Thought / CTA -->
 <section class="py-20 bg-surface text-center">
 <div class="max-w-2xl mx-auto px-8">
