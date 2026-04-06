@@ -30,10 +30,9 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
-    transition: 0.3s;
 }
 
-/* NAVBAR (STICKY) */
+/* NAVBAR */
 nav {
     position: sticky;
     top: 0;
@@ -45,57 +44,47 @@ nav {
     border-bottom: 2px solid #111;
 }
 
-nav span {
-    color: var(--accent);
-    font-weight: bold;
+/* ========================= */
+/* GRAPH BACKGROUND (KEY) */
+/* ========================= */
+.graph-bg {
+    position: fixed;
+    top: 60px; /* below navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    z-index: -1; /* sits behind content */
 }
 
-button {
-    background: none;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 6px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* GRAPH HERO */
-.graph-hero {
-    position: relative;
-    height: 120vh;
-    overflow: hidden;
-}
-
-.graph-img {
+.graph-bg img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* IMPORTANT: fully visible */
+    background: var(--bg);
 }
 
-/* FADE INTO PAGE */
-.fade-overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 200px;
+/* ========================= */
+/* CONTENT THAT SCROLLS OVER */
+/* ========================= */
+.content {
+    position: relative;
+    z-index: 2;
+}
 
+/* HERO OVER IMAGE */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* THIS creates the fade-over effect */
     background: linear-gradient(
         to bottom,
         rgba(250,234,224,0) 0%,
-        var(--bg) 100%
+        var(--bg) 60%
     );
-}
-
-/* CONTENT AREA */
-.scroll-content {
-    background: var(--bg);
-    padding-top: 40px;
-}
-
-/* HERO TEXT */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
 }
 
 .hero h1 {
@@ -107,15 +96,15 @@ button {
     max-width: 700px;
     margin: auto;
     color: var(--muted);
-    line-height: 1.6;
 }
 
-/* GRID */
+/* GRID SECTION */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     padding: 60px 40px;
+    background: var(--bg);
 }
 
 /* CARD */
@@ -150,23 +139,9 @@ button {
     padding: 20px;
 }
 
-.card h2 {
-    margin: 0;
-}
-
-.card p {
-    color: var(--muted);
-}
-
-.card a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* EXTRA SCROLL SPACE */
+/* EXTRA SCROLL */
 .spacer {
-    height: 100vh;
+    height: 120vh;
 }
 
 /* MOBILE */
@@ -185,23 +160,23 @@ button {
     <button onclick="toggleMode()">Toggle Mode</button>
 </nav>
 
-<!-- FULLSCREEN GRAPH -->
-<section class="graph-hero">
-    <img src="images/SFDataTitle.jpeg" class="graph-img">
-    <div class="fade-overlay"></div>
-</section>
+<!-- FIXED BACKGROUND IMAGE -->
+<div class="graph-bg">
+    <img src="images/SFDataTitle.jpeg">
+</div>
 
-<!-- SCROLLABLE CONTENT -->
-<section class="scroll-content">
+<!-- SCROLLING CONTENT -->
+<div class="content">
 
-    <div class="hero">
-        <h1>SF Crime: Two Decades of Data</h1>
-        <p>
-            Scroll down to explore how crime evolves across time, geography, and human behavior patterns.
-        </p>
-    </div>
+    <section class="hero">
+        <div>
+            <h1>SF Crime: Two Decades of Data</h1>
+            <p>
+                Scroll down to explore how crime evolves across time, geography, and human behavior.
+            </p>
+        </div>
+    </section>
 
-    <!-- EXTRA SCROLL SPACE FOR EFFECT -->
     <div class="spacer"></div>
 
     <section class="grid">
@@ -211,7 +186,6 @@ button {
             <div class="card-content">
                 <h2>Yearly Crime Trends</h2>
                 <p>How major crime categories have shifted over time.</p>
-                <a href="#">Read more →</a>
             </div>
         </div>
 
@@ -224,24 +198,11 @@ button {
             </div>
         </div>
 
-        <div class="card">
-            <div class="thumb">Crime Map</div>
-            <div class="card-content">
-                <h2>Crime Distribution Map</h2>
-                <iframe 
-                    src="visualizations/crime_hourly_heatmap.html"
-                    width="100%" 
-                    height="400px"
-                    style="border:none;">
-                </iframe>
-            </div>
-        </div>
-
     </section>
 
     <div class="spacer"></div>
 
-</section>
+</div>
 
 <script>
 function toggleMode() {
