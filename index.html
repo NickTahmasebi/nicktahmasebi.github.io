@@ -4,15 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Scrollytelling Test</title>
+<title>SF Crime: Two Decades of Data</title>
 
 <style>
+/* ========================= */
+/* MODERN COLOR SYSTEM */
+/* ========================= */
 :root {
-    --bg: #faeae0;
-    --text: #111;
-    --accent: #e8186d;
+    --bg: #f7f6f3;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+
+    --accent: #e45757;
+    --accent-soft: #f3d6d6;
+
+    --border: #e5e3df;
 }
 
+/* DARK MODE */
+.dark-mode {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #f3f3f3;
+    --muted: #9a9a9a;
+
+    --accent: #ff6b6b;
+    --accent-soft: #3a1f1f;
+
+    --border: #2a2a2a;
+}
+
+/* ========================= */
+/* BASE */
+/* ========================= */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -20,82 +45,164 @@ body {
     color: var(--text);
 }
 
-/* NAV */
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
 nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 15px 30px;
-    background: white;
-    border-bottom: 2px solid #111;
-}
 
-/* ========================= */
-/* SCROLLYTELLING CONTAINER */
-/* ========================= */
-.scrolly {
-    position: relative;
-}
-
-/* GRAPH (STICKY PART) */
-.graph {
-    position: sticky;
-    top: 60px; /* below navbar */
-    height: calc(100vh - 60px);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg);
-    z-index: 1;
+    justify-content: space-between;
+    padding: 16px 32px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border);
 }
 
-.graph img {
+nav span {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+button {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ========================= */
+/* GRAPH BACKGROUND */
+/* ========================= */
+.graph-bg {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    z-index: -1;
+}
+
+.graph-bg img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    background: var(--bg);
 }
 
-/* TEXT STEPS */
-.steps {
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+.content {
     position: relative;
     z-index: 2;
 }
 
-/* EACH TEXT BLOCK */
-.step {
+/* HERO */
+.hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
-    /* THIS creates fade over image */
     background: linear-gradient(
         to bottom,
-        rgba(250,234,224,0) 0%,
-        var(--bg) 70%
+        rgba(247,246,243,0) 0%,
+        var(--bg) 65%
     );
 }
 
-.step div {
-    max-width: 600px;
-    text-align: center;
+.hero h1 {
+    font-size: 3rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
 }
 
-.step h1 {
-    color: var(--accent);
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 1.1rem;
 }
 
-/* AFTER SECTION (IMAGE GONE) */
-.after {
-    padding: 100px 40px;
-    background: var(--bg);
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 60px 40px;
 }
 
+/* CARD */
 .card {
-    background: white;
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+
+    transition: all 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.card img,
+.thumb {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.thumb {
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* CONTENT */
+.card-content {
     padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin: 0 0 10px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* SCROLL SPACE */
+.spacer {
+    height: 120vh;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
 }
 </style>
 </head>
@@ -103,58 +210,59 @@ nav {
 <body>
 
 <nav>
-    SF Crime Story
+    <div>A data story by <span>Nick Tahmasebi</span></div>
+    <button onclick="toggleMode()">Toggle Mode</button>
 </nav>
 
-<section class="scrolly">
+<!-- BACKGROUND GRAPH -->
+<div class="graph-bg">
+    <img src="images/SFDataTitle.jpeg">
+</div>
 
-    <!-- STICKY IMAGE -->
-    <div class="graph">
-        <img src="images/SFDataTitle.jpeg">
-    </div>
+<!-- CONTENT -->
+<div class="content">
 
-    <!-- TEXT THAT SCROLLS OVER -->
-    <div class="steps">
+    <section class="hero">
+        <div>
+            <h1>SF Crime: Two Decades of Data</h1>
+            <p>
+                Scroll down to explore how crime evolves across time, geography, and human behavior.
+            </p>
+        </div>
+    </section>
 
-        <div class="step">
-            <div>
-                <h1>SF Crime</h1>
-                <p>This is where the story begins.</p>
+    <div class="spacer"></div>
+
+    <section class="grid">
+
+        <div class="card">
+            <img src="images/yearly_crime_trends.png">
+            <div class="card-content">
+                <h2>Yearly Crime Trends</h2>
+                <p>How major crime categories have shifted over time.</p>
             </div>
         </div>
 
-        <div class="step">
-            <div>
-                <h1>Patterns Over Time</h1>
-                <p>Crime rises and falls throughout the day.</p>
+        <div class="card">
+            <div class="thumb">Interactive Chart</div>
+            <div class="card-content">
+                <h2>Hourly Crime Patterns</h2>
+                <p>Explore how crime fluctuates throughout the day.</p>
+                <a href="visualizations/crime_hourly_interactive.html">Explore →</a>
             </div>
         </div>
 
-        <div class="step">
-            <div>
-                <h1>Night Behavior</h1>
-                <p>Late hours show distinct spikes.</p>
-            </div>
-        </div>
+    </section>
 
-    </div>
+    <div class="spacer"></div>
 
-</section>
+</div>
 
-<!-- NORMAL CONTENT AFTER (IMAGE IS GONE NOW) -->
-<section class="after">
-
-    <div class="card">
-        <h2>Yearly Crime Trends</h2>
-        <p>Now we move into normal page content.</p>
-    </div>
-
-    <div class="card">
-        <h2>Maps & Analysis</h2>
-        <p>The sticky graphic is now completely gone.</p>
-    </div>
-
-</section>
+<script>
+function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+}
+</script>
 
 </body>
 </html>
