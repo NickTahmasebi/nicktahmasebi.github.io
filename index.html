@@ -156,13 +156,14 @@
             <!-- LEFT -->
             <div class="lg:col-span-2">
               <div class="rounded-xl overflow-hidden border border-outline-variant/10 bg-white h-fit">
-                <iframe 
-                  src="visualizations/crime_hourly_heatmap.html" 
+                <iframe
+                  src="visualizations/crime_hourly_heatmap.html"
                   class="w-full h-[520px] md:h-[580px] lg:h-[620px]"
                   frameborder="0"
                   scrolling="no">
                 </iframe>
               </div>
+              <p class="text-xs text-on-surface-variant mt-3 italic"><span class="font-semibold not-italic">Figure 1 —</span> Animated density heatmap of crime incidents (prostitution, robbery, burglary, arson) across San Francisco, hour by hour. Each frame represents one hour of the day aggregated across 2003–2025. Press Play or drag the slider to explore. Data: SFPD Incident Reports.</p>
             </div>
           
             <!-- RIGHT -->
@@ -219,7 +220,7 @@
           </p>
   
           <p class="text-on-primary-container/60 text-sm leading-relaxed">
-            Each row shows the 24-hour distribution of one crime type, min-max scaled so the shape of the rhythm is visible regardless of total volume. Sunrise and sunset bands mark the transition between day and night for each season. Peaks are annotated at the hour of highest activity.
+            <span class="font-semibold">Figure 2 —</span> Each row shows the 24-hour distribution of one crime type, min-max scaled so the shape of the rhythm is visible regardless of total volume. Sunrise and sunset bands mark the transition between day and night for each season. Peaks are annotated at the hour of highest activity.
           </p>
 
           <p class="text-on-primary-container text-lg font-light leading-relaxed mt-6">
@@ -282,12 +283,13 @@
   
         <!-- LEFT: GRAPH -->
         <div class="lg:col-span-2 -ml-6">
-          <iframe 
+          <iframe
             src="visualizations/crime_yearly_trends.html"
             class="w-full h-[500px]"
             frameborder="0"
             scrolling="no">
           </iframe>
+          <p class="text-xs text-on-surface-variant mt-3 italic"><span class="font-semibold not-italic">Figure 3 —</span> Annual incident counts for prostitution, robbery, burglary, and arson in San Francisco from 2003 to 2025. Each line represents one crime type; counts reflect reported incidents only. Data: SFPD Incident Reports.</p>
         </div>
   
         <!-- RIGHT: TEXT -->
