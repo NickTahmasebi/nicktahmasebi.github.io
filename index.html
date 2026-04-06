@@ -87,7 +87,7 @@
 <body class="bg-background text-on-surface font-body selection:bg-primary-fixed-dim">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-8 py-4 max-w-full mx-auto">
-<div class="text-lg font-black tracking-tighter text-slate-950">Group 31: The Precise Observe</div>
+<div class="text-lg font-black tracking-tighter text-slate-950">Group 31: The Precise Observers</div>
 <div class="hidden md:flex space-x-8 items-center">
 <!-- Navigation links removed as per edit request -->
 </div>
@@ -262,16 +262,66 @@
   
     </div>
   </section>
-<!-- Visualization 3: Yearly Trends -->
-<section class="py-24 border-t border-surface-container">
+<!-- Trend Line Section (Redesigned) -->
+<section class="py-32 border-t border-surface-container">
     <div class="max-w-7xl mx-auto px-8">
-    <h2 class="text-3xl font-black tracking-tight mb-4">San Francisco's Night Life in Numbers - A Story over Twenty Years</h2>
-    <p class="text-on-surface-variant mb-8 max-w-2xl">Annual incident counts for all four crimes from 2003 to 2025. Use the legend to isolate individual crimes, or toggle all at once with the buttons. Two moments stand out: the 2009 financial crisis and the COVID-19 lockdowns of 2020.</p>
-    <div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10">
-    <iframe src="visualizations/crime_yearly_trends.html" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+  
+      <!-- Header -->
+      <div class="max-w-3xl mb-16">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-4">
+          San Francisco's Night Life in Numbers — A Story over Twenty Years
+        </h2>
+        <p class="text-on-surface-variant">
+          Annual incident counts for all four crimes from 2003 to 2025. Use the legend to isolate individual crimes, or toggle all at once with the buttons.
+        </p>
+      </div>
+  
+      <!-- Layout -->
+      <div class="grid lg:grid-cols-3 gap-12 items-start">
+  
+        <!-- LEFT: GRAPH -->
+        <div class="lg:col-span-2 -ml-6">
+          <iframe 
+            src="visualizations/crime_yearly_trends.html"
+            class="w-full h-[500px]"
+            frameborder="0"
+            scrolling="no">
+          </iframe>
+        </div>
+  
+        <!-- RIGHT: TEXT -->
+        <div class="space-y-6">
+  
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">
+              Analysis
+            </p>
+  
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+  
+            <p class="text-sm text-on-surface-variant leading-relaxed mt-4">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            </p>
+          </div>
+  
+          <!-- Optional insight box -->
+          <div class="p-5 bg-surface-container-low rounded-xl">
+            <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2">
+              Key Insight
+            </p>
+            <p class="text-sm text-on-surface-variant">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+            </p>
+          </div>
+  
+        </div>
+  
+      </div>
+  
     </div>
-    </div>
-    </section>
+  </section>
 <!-- Final Thought / CTA -->
 <section class="py-20 bg-surface text-center">
 <div class="max-w-2xl mx-auto px-8">
