@@ -86,11 +86,20 @@
         }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body selection:bg-primary-fixed-dim">
+<body class="bg-background dark:bg-[#0f172a] text-on-surface dark:text-white font-body selection:bg-primary-fixed-dim">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-8 py-4 max-w-full mx-auto">
-<div class="text-lg font-black tracking-tighter text-slate-950">Group 31: The Precise Observe</div>
-<div class="hidden md:flex space-x-8 items-center">
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+    <div class="text-lg font-black tracking-tighter text-slate-950 dark:text-white">
+      Group 31: The Precise Observe
+    </div>
+  
+    <div class="flex items-center space-x-4">
+      <!-- Dark Mode Toggle -->
+      <button id="themeToggle" class="material-symbols-outlined text-slate-900 dark:text-white cursor-pointer">
+        dark_mode
+      </button>
+    </div>
+  </nav>
 <!-- Navigation links removed as per edit request -->
 </div>
 <div class="flex items-center space-x-4">
@@ -359,4 +368,29 @@
 
 
 </footer>
-</body></html>
+</body>
+
+<script>
+    const toggle = document.getElementById("themeToggle");
+    const html = document.documentElement;
+  
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+      toggle.textContent = "light_mode";
+    }
+  
+    toggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+  
+      if (html.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        toggle.textContent = "light_mode";
+      } else {
+        localStorage.setItem("theme", "light");
+        toggle.textContent = "dark_mode";
+      }
+    });
+  </script>
+
+</html>
