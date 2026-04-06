@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,7 +15,7 @@
     --muted: #666666;
 }
 
-/* Dark mode */
+/* DARK MODE */
 .dark-mode {
     --bg: #1a0a0f;
     --card: #2a1520;
@@ -25,7 +24,7 @@
     --muted: #aaaaaa;
 }
 
-/* Base */
+/* BASE */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -34,7 +33,7 @@ body {
     transition: 0.3s;
 }
 
-/* NAVBAR */
+/* NAVBAR (STICKY) */
 nav {
     position: sticky;
     top: 0;
@@ -43,7 +42,7 @@ nav {
     justify-content: space-between;
     padding: 15px 30px;
     background: var(--card);
-    border-bottom: 2px solid #111111;
+    border-bottom: 2px solid #111;
 }
 
 nav span {
@@ -60,10 +59,43 @@ button {
     cursor: pointer;
 }
 
-/* HERO */
+/* GRAPH HERO */
+.graph-hero {
+    position: relative;
+    height: 120vh;
+    overflow: hidden;
+}
+
+.graph-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* FADE INTO PAGE */
+.fade-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(250,234,224,0) 0%,
+        var(--bg) 100%
+    );
+}
+
+/* CONTENT AREA */
+.scroll-content {
+    background: var(--bg);
+    padding-top: 40px;
+}
+
+/* HERO TEXT */
 .hero {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 60px 20px;
 }
 
 .hero h1 {
@@ -98,7 +130,6 @@ button {
     transform: translateY(-8px);
 }
 
-/* IMAGE / THUMB */
 .card img,
 .thumb {
     width: 100%;
@@ -106,7 +137,6 @@ button {
     object-fit: cover;
 }
 
-/* Placeholder block */
 .thumb {
     background: #fcd5cc;
     display: flex;
@@ -116,7 +146,6 @@ button {
     font-weight: bold;
 }
 
-/* CONTENT */
 .card-content {
     padding: 20px;
 }
@@ -129,22 +158,15 @@ button {
     color: var(--muted);
 }
 
-/* LINK */
 .card a {
     color: var(--accent);
     text-decoration: none;
     font-weight: bold;
 }
 
-/* TAG */
-.tag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: var(--bg);
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.75rem;
+/* EXTRA SCROLL SPACE */
+.spacer {
+    height: 100vh;
 }
 
 /* MOBILE */
@@ -154,7 +176,6 @@ button {
     }
 }
 </style>
-
 </head>
 
 <body>
@@ -164,63 +185,63 @@ button {
     <button onclick="toggleMode()">Toggle Mode</button>
 </nav>
 
-<section class="hero">
-    <h1>SF Crime: Two Decades of Data</h1>
-    <p>
-        A data-driven exploration of crime trends in San Francisco over the past twenty years.
-        From temporal patterns to geographic distributions, this project uncovers how crime evolves across the city.
-    </p>
+<!-- FULLSCREEN GRAPH -->
+<section class="graph-hero">
+    <img src="images/SFDataTitle.jpeg" class="graph-img">
+    <div class="fade-overlay"></div>
 </section>
 
-<section class="grid">
+<!-- SCROLLABLE CONTENT -->
+<section class="scroll-content">
 
-```
-<!-- IMAGE -->
-<div class="card">
-    <img src="images/yearly_crime_trends.png">
-    <div class="card-content">
-        <h2>Yearly Crime Trends</h2>
-        <p>How major crime categories have shifted over time.</p>
-        <a href="images/yearly_crime_trends.png">Read more →</a>
+    <div class="hero">
+        <h1>SF Crime: Two Decades of Data</h1>
+        <p>
+            Scroll down to explore how crime evolves across time, geography, and human behavior patterns.
+        </p>
     </div>
-</div>
 
-<!-- PLOTLY -->
-<div class="card">
-    <div class="thumb">Interactive Chart</div>
-    <div class="card-content">
-        <h2>Hourly Crime Patterns</h2>
-        <p>Explore how crime fluctuates throughout the day.</p>
-        <a href="visualizations/crime_hourly_interactive.html">Explore →</a>
-    </div>
-</div>
+    <!-- EXTRA SCROLL SPACE FOR EFFECT -->
+    <div class="spacer"></div>
 
-<!-- MAP -->
-<div class="card">
-    <div class="thumb">Crime Map</div>
-    <div class="card-content">
-        <h2>Crime Distribution Map</h2>
-        <p>See how crime varies across San Francisco districts.</p>
+    <section class="grid">
+
+        <div class="card">
+            <img src="images/yearly_crime_trends.png">
+            <div class="card-content">
+                <h2>Yearly Crime Trends</h2>
+                <p>How major crime categories have shifted over time.</p>
+                <a href="#">Read more →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="thumb">Interactive Chart</div>
+            <div class="card-content">
+                <h2>Hourly Crime Patterns</h2>
+                <p>Explore how crime fluctuates throughout the day.</p>
+                <a href="visualizations/crime_hourly_interactive.html">Explore →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="thumb">Crime Map</div>
+            <div class="card-content">
+                <h2>Crime Distribution Map</h2>
                 <iframe 
                     src="visualizations/crime_hourly_heatmap.html"
                     width="100%" 
-                    height="700px"
+                    height="400px"
                     style="border:none;">
                 </iframe>
-    </div>
-</div>
-```
+            </div>
+        </div>
+
+    </section>
+
+    <div class="spacer"></div>
 
 </section>
-
-<h2>Hourly Robbery Density Map</h2>
-
-<iframe 
-    src="crime_hourly_heatmap.html"
-    width="100%" 
-    height="700px"
-    style="border:none;">
-</iframe>
 
 <script>
 function toggleMode() {
