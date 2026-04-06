@@ -66,14 +66,13 @@ nav span {
 /* ========================= */
 .graph-container {
     position: relative;
-    height: 200vh; /* controls how long image stays */
+    height: 200vh;
 }
 
 /* STICKY GRAPH */
 .graph {
     position: sticky;
     top: 60px;
-
     height: calc(100vh - 60px);
 
     display: flex;
@@ -95,8 +94,11 @@ nav span {
     z-index: 2;
 }
 
-/* HERO */
+/* HERO (EARLY OVERLAY FIX) */
 .hero {
+    margin-top: -60vh;   /* pulls text UP earlier */
+    padding-top: 60vh;
+
     height: 100vh;
 
     display: flex;
@@ -107,7 +109,8 @@ nav span {
     background: linear-gradient(
         to bottom,
         rgba(247,246,243,0) 0%,
-        var(--bg) 70%
+        rgba(247,246,243,0.6) 40%,
+        var(--bg) 60%
     );
 }
 
@@ -196,7 +199,7 @@ nav span {
 <!-- SCROLLYTELLING SECTION -->
 <section class="graph-container">
 
-    <!-- STICKY IMAGE -->
+    <!-- STICKY GRAPH -->
     <div class="graph">
         <img src="images/SFDataTitle.jpeg">
     </div>
@@ -215,7 +218,7 @@ nav span {
 
 </section>
 
-<!-- NORMAL PAGE CONTINUES -->
+<!-- NORMAL CONTENT -->
 <section class="grid">
 
     <div class="card">
