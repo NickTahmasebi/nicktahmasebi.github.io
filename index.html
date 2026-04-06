@@ -7,9 +7,6 @@
 <title>SF Crime: Two Decades of Data</title>
 
 <style>
-/* ========================= */
-/* MODERN COLOR SYSTEM */
-/* ========================= */
 :root {
     --bg: #f7f6f3;
     --card: #ffffff;
@@ -35,9 +32,7 @@
     --border: #2a2a2a;
 }
 
-/* ========================= */
 /* BASE */
-/* ========================= */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -45,9 +40,7 @@ body {
     color: var(--text);
 }
 
-/* ========================= */
-/* NAVBAR */
-/* ========================= */
+/* NAV */
 nav {
     position: sticky;
     top: 0;
@@ -68,35 +61,35 @@ nav span {
     font-weight: 600;
 }
 
-button {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 6px 10px;
-    border-radius: 8px;
-    cursor: pointer;
+/* ========================= */
+/* SCROLLYTELLING CONTAINER */
+/* ========================= */
+.graph-container {
+    position: relative;
+    height: 200vh; /* controls how long image stays */
 }
 
-/* ========================= */
-/* GRAPH BACKGROUND */
-/* ========================= */
-.graph-bg {
-    position: fixed;   /* KEY CHANGE */
-    height: 120vh;        /* gives scroll room */
+/* STICKY GRAPH */
+.graph {
+    position: sticky;
+    top: 60px;
+
+    height: calc(100vh - 60px);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    z-index: 1;
 }
 
-.graph-bg img {
+.graph img {
     width: 100%;
-    max-height: 90vh;
+    height: 100%;
     object-fit: contain;
 }
 
-/* ========================= */
-/* CONTENT */
-/* ========================= */
+/* CONTENT OVERLAY */
 .content {
     position: relative;
     z-index: 2;
@@ -104,10 +97,7 @@ button {
 
 /* HERO */
 .hero {
-    margin-top: -40vh;  /* pulls text into the image */
-    padding-top: 40vh;
-
-    min-height: 100vh;
+    height: 100vh;
 
     display: flex;
     align-items: center;
@@ -124,7 +114,6 @@ button {
 .hero h1 {
     font-size: 3rem;
     letter-spacing: -0.02em;
-    margin-bottom: 10px;
 }
 
 .hero p {
@@ -132,7 +121,6 @@ button {
     margin: auto;
     color: var(--muted);
     line-height: 1.7;
-    font-size: 1.1rem;
 }
 
 /* GRID */
@@ -176,28 +164,17 @@ button {
     font-weight: 600;
 }
 
-/* CONTENT */
 .card-content {
     padding: 20px;
-}
-
-.card h2 {
-    margin: 0 0 10px;
 }
 
 .card p {
     color: var(--muted);
 }
 
-a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-/* SCROLL SPACE */
+/* SPACER */
 .spacer {
-    height: 120vh;
+    height: 100vh;
 }
 
 /* MOBILE */
@@ -216,49 +193,50 @@ a {
     <button onclick="toggleMode()">Toggle Mode</button>
 </nav>
 
-<!-- BACKGROUND GRAPH -->
-<div class="graph-bg">
-    <img src="images/SFDataTitle.jpeg">
-</div>
+<!-- SCROLLYTELLING SECTION -->
+<section class="graph-container">
 
-<!-- CONTENT -->
-<div class="content">
+    <!-- STICKY IMAGE -->
+    <div class="graph">
+        <img src="images/SFDataTitle.jpeg">
+    </div>
 
-    <section class="hero">
-        <div>
-            <h1>SF Crime: Two Decades of Data</h1>
-            <p>
-                Scroll down to explore how crime evolves across time, geography, and human behavior.
-            </p>
-        </div>
-    </section>
-
-    <div class="spacer"></div>
-
-    <section class="grid">
-
-        <div class="card">
-            <img src="images/yearly_crime_trends.png">
-            <div class="card-content">
-                <h2>Yearly Crime Trends</h2>
-                <p>How major crime categories have shifted over time.</p>
+    <!-- TEXT OVERLAY -->
+    <div class="content">
+        <section class="hero">
+            <div>
+                <h1>SF Crime: Two Decades of Data</h1>
+                <p>
+                    Scroll down to explore how crime evolves across time, geography, and human behavior.
+                </p>
             </div>
+        </section>
+    </div>
+
+</section>
+
+<!-- NORMAL PAGE CONTINUES -->
+<section class="grid">
+
+    <div class="card">
+        <img src="images/yearly_crime_trends.png">
+        <div class="card-content">
+            <h2>Yearly Crime Trends</h2>
+            <p>How major crime categories have shifted over time.</p>
         </div>
+    </div>
 
-        <div class="card">
-            <div class="thumb">Interactive Chart</div>
-            <div class="card-content">
-                <h2>Hourly Crime Patterns</h2>
-                <p>Explore how crime fluctuates throughout the day.</p>
-                <a href="visualizations/crime_hourly_interactive.html">Explore →</a>
-            </div>
+    <div class="card">
+        <div class="thumb">Interactive Chart</div>
+        <div class="card-content">
+            <h2>Hourly Crime Patterns</h2>
+            <p>Explore how crime fluctuates throughout the day.</p>
         </div>
+    </div>
 
-    </section>
+</section>
 
-    <div class="spacer"></div>
-
-</div>
+<div class="spacer"></div>
 
 <script>
 function toggleMode() {
