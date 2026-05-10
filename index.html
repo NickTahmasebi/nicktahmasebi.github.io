@@ -131,80 +131,82 @@
   <div class="text-lg leading-relaxed text-on-surface-variant space-y-6">
     <p>The analysis covers all Olympic Games between 1960 and 2016, spanning the Cold War era through to modern global competition. While a small group of countries consistently dominates the medal tables, there are also repeated outliers that challenge simple economic explanations.</p>
     
-    <p>The dataset combines Olympic medal results with country-level GDP and population figures over the same period. Medal counts represent official Olympic outcomes, while GDP and population act as baselines to test whether sporting success scales with wealth or demographic size.</p>
+    <p>The dataset combines Olympic medal results with countrylevel GDP and population figures over the same period. Medal counts represent official Olympic outcomes, while GDP and population act as baselines to test whether sporting success scales with wealth or demographic size.</p>
     </div>
 </div>
 </div>
 </section>
 <!-- Visualization 1: Redesigned Split Layout -->
 <section class="bg-surface-container-low py-32">
-    <div class="max-w-7xl mx-auto px-8">
-  
-      <!-- Section Header -->
-      <div class="mb-16 max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-on-surface mb-4">
-          Where Crime Moves Through the Night
-        </h2>
-        <p class="text-on-surface-variant">
-          Press play and watch how the four focus crimes — prostitution, robbery, burglary, and arson — shift across San Francisco hour by hour.
-        </p>
-      </div>
-  
-      <!-- Main Card -->
-      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm p-6 md:p-8">
-  
-        <div class="grid lg:grid-cols-3 gap-10 items-start">
+  <div class="max-w-7xl mx-auto px-8">
 
-            <!-- LEFT -->
-            <div class="lg:col-span-2">
-              <div class="rounded-xl overflow-hidden border border-outline-variant/10 bg-white h-fit">
-                <iframe
-                  src="visualizations/crime_hourly_heatmap.html"
-                  class="w-full h-[520px] md:h-[580px] lg:h-[620px]"
-                  frameborder="0"
-                  scrolling="no">
-                </iframe>
-              </div>
-              <p class="text-xs text-on-surface-variant mt-3 italic"><span class="font-semibold not-italic">Figure 1 —</span> Animated density heatmap of crime incidents (prostitution, robbery, burglary, arson) across San Francisco, hour by hour. Each frame represents one hour of the day aggregated across 2003–2025. Press Play or drag the slider to explore. Data: SFPD Incident Reports.</p>
-            </div>
-          
-            <!-- RIGHT -->
-            <div class="space-y-6 sticky top-28 self-start">
-  
-            <!-- Legend -->
-            <div class="p-5 bg-surface-container-low rounded-xl">
-              <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-4">
-                Incident Density
-              </p>
-              <div class="flex gap-2">
-                <div class="h-2 flex-1 bg-white rounded-full"></div>
-                <div class="h-2 flex-1 bg-orange-300 rounded-full"></div>
-                <div class="h-2 flex-1 bg-orange-500 rounded-full"></div>
-                <div class="h-2 flex-1 bg-red-500 rounded-full"></div>
-                <div class="h-2 flex-1 bg-red-700 rounded-full"></div>
-              </div>
-            </div>
-  
-            <!-- Analysis -->
-            <div class="p-6 bg-surface-container-low rounded-xl">
-              <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">
-                Analysis
-              </p>
-              <p class="text-sm text-on-surface-variant leading-relaxed">
-                The map makes one thing immediately clear: after midnight, crime in San Francisco is not spread evenly across the city. It collapses into a handful of corridors — the Tenderloin, the Mission, and the stretch of Market Street between them. During the day the density flattens out and spreads. After dark it concentrates. Use the slider to watch that shift happen in real time.
-              </p>
-              <p class="text-sm text-on-surface-variant leading-relaxed mt-4">
-                It is also worth noting what the data cannot tell you: a hotspot on this map reflects where incidents were reported, not necessarily where crime is most prevalent. Areas with fewer reports may simply have lower rates of reporting.
-              </p>
-            </div>
-  
-          </div>
-  
-        </div>
-  
-      </div>
+    <!-- Section Header -->
+    <div class="mb-16 max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight text-on-surface mb-4">
+        Who Actually Wins the Olympics?
+      </h2>
+      <p class="text-on-surface-variant">
+        Before introducing any economic comparisons, this view shows the raw distribution of Olympic success — who wins, how often, and across which sports.
+      </p>
     </div>
-  </section>
+
+    <!-- Main Card -->
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm p-6 md:p-8">
+
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+
+          <!-- LEFT -->
+          <div class="lg:col-span-2">
+            <div class="rounded-xl overflow-hidden border border-outline-variant/10 bg-white h-fit">
+              <iframe
+                src="visualizations/olympic_medal_distribution.html"
+                class="w-full h-[520px] md:h-[580px] lg:h-[620px]"
+                frameborder="0"
+                scrolling="no">
+              </iframe>
+            </div>
+            <p class="text-xs text-on-surface-variant mt-3 italic">
+              <span class="font-semibold not-italic">Figure 1 —</span> Distribution of Olympic medals by country and sport (1960–2016). The visualization highlights concentration of success across nations and the range of Olympic disciplines included in the dataset.
+            </p>
+          </div>
+        
+          <!-- RIGHT -->
+          <div class="space-y-6 sticky top-28 self-start">
+
+          <!-- Legend -->
+          <div class="p-5 bg-surface-container-low rounded-xl">
+            <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-4">
+              Medal Concentration
+            </p>
+            <div class="flex gap-2">
+              <div class="h-2 flex-1 bg-white rounded-full"></div>
+              <div class="h-2 flex-1 bg-blue-300 rounded-full"></div>
+              <div class="h-2 flex-1 bg-blue-500 rounded-full"></div>
+              <div class="h-2 flex-1 bg-indigo-500 rounded-full"></div>
+              <div class="h-2 flex-1 bg-indigo-700 rounded-full"></div>
+            </div>
+          </div>
+
+          <!-- Analysis -->
+          <div class="p-6 bg-surface-container-low rounded-xl">
+            <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">
+              Analysis
+            </p>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Olympic success is highly uneven. A small group of countries accounts for a large share of total medals, while the majority of nations win relatively few. This pattern is consistent across the full 1960–2016 period.
+            </p>
+            <p class="text-sm text-on-surface-variant leading-relaxed mt-4">
+              However, this raw distribution does not yet account for economic or population differences. It is a starting point: a descriptive view of who wins before introducing any notion of what “fair” or “expected” performance might look like.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 <!-- Seasonal Ridgeline Section (Fixed Layout) -->
 <section class="bg-primary-container text-on-primary py-40 overflow-visible">
   <div class="max-w-7xl mx-auto px-8">
