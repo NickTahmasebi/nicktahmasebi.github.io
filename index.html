@@ -203,48 +203,76 @@
       </div>
     </div>
   </section>
-<!-- Seasonal Ridgeline Section (Fixed Layout) -->
-<section class="bg-primary-container text-on-primary py-40 overflow-visible">
-    <div class="max-w-[1600px] mx-auto px-12">
-  
-      <div class="grid lg:grid-cols-2 gap-16 items-center relative">
-  
-        <!-- LEFT: TEXT -->
-        <div class="max-w-lg z-10 -ml-12">
-          <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6">
-            The Rhythm of Crime Across the Seasons
-          </h2>
-  
-          <p class="text-on-primary-container text-lg font-light leading-relaxed mb-8">
-            The four crimes don't just peak at night — they each follow a distinct daily rhythm that shifts with the seasons. Burglary follows the light. Robbery follows the crowd. Prostitution and arson belong almost entirely to the dark.
-          </p>
-  
-          <p class="text-on-primary-container text-lg font-light leading-relaxed mt-6">
-            The most striking pattern across all four panels is not what changes — it is what stays constant. Prostitution peaks at 23:00 whether it is January or July. But robbery tells an even more precise story: its peak hour shifts with the seasons, yet it consistently falls approximately three hours after sunset, every single season. In winter, when San Francisco goes dark around 17:00, robbery peaks near 20:00. In summer, sunset pushes past 20:00, and robbery follows, peaking around 23:00. That locked relationship — darkness plus three hours — suggests a behavioural pattern so embedded it does not need a calendar. It tracks the sun.
-          </p>
-        </div>
+<!-- Trend Line Section (Redesigned) -->
+<section class="py-32 border-t border-surface-container bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+
+    <!-- Header -->
+    <div class="max-w-3xl mb-16">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-4">
+        San Francisco's Night Life in Numbers — A Story over Twenty Years
+      </h2>
+      <p class="text-on-surface-variant">
+        Annual incident counts for all four crimes from 2003 to 2025. Use the legend to isolate individual crimes, or toggle all at once with the buttons.
+      </p>
+    </div>
+
+    <!-- Layout -->
+    <div class="grid lg:grid-cols-3 gap-12 items-start">
+
+      <!-- LEFT: GRAPH -->
+      <div class="lg:col-span-2 -ml-6">
+        <iframe
+          src="visualizations/crime_yearly_trends.html"
+          class="w-full h-[500px]"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+        <p class="text-xs text-on-surface-variant mt-3 italic"><span class="font-semibold not-italic">Figure 3 —</span> Annual incident counts for prostitution, robbery, burglary, and arson in San Francisco from 2003 to 2025. Each line represents one crime type; counts reflect reported incidents only. Data: SFPD Incident Reports.</p>
       </div>
 
-      <!-- Figure 2 caption -->
-      <p class="mt-40 ml-[40%] text-on-primary-container/60 text-xs leading-relaxed max-w-xl">
-        <span class="font-semibold text-on-primary-container/80">Figure 2 —</span> Each row shows the 24-hour distribution of one crime type, min-max scaled so the shape of the rhythm is visible regardless of total volume. Sunrise and sunset bands mark the transition between day and night for each season. Peaks are annotated at the hour of highest activity.
-      </p>
+      <!-- RIGHT: TEXT -->
+      <div class="space-y-6">
+
+        <!-- How to interact -->
+        <div class="p-5 bg-surface-container-low rounded-xl">
+          <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">
+            How to interact
+          </p>
+          <ul class="text-sm text-on-surface-variant leading-relaxed space-y-2">
+            <li><span class="font-semibold text-on-surface">Click a crime</span> in the legend to show or hide it</li>
+            <li><span class="font-semibold text-on-surface">Double-click a crime</span> to isolate it and hide the rest</li>
+            <li><span class="font-semibold text-on-surface">Show All / Hide All</span> buttons reset or clear the view</li>
+            <li><span class="font-semibold text-on-surface">Click and drag</span> on the chart to zoom into a time range</li>
+            <li><span class="font-semibold text-on-surface">Double-click the chart</span> to zoom back out</li>
+            <li><span class="font-semibold text-on-surface">Hover</span> over any point to see the exact year and count</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">
+            Analysis
+          </p>
+
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Across twenty years, the four crimes do not move as one. Burglary and robbery track broader economic cycles, rising through the mid-2010s before pulling back later in the decade. Prostitution falls sharply and never fully recovers — a drop driven as much by shifting enforcement priorities as by any change in actual prevalence.
+          </p>
+
+          <p class="text-sm text-on-surface-variant leading-relaxed mt-4">
+            Arson stays low and flat throughout, dwarfed in volume by the other three. Isolating individual crimes using the legend makes the scale differences stark: at peak, burglary outnumbers arson by an order of magnitude.
+          </p>
+
+          <p class="text-sm text-on-surface-variant leading-relaxed mt-4">
+            Prostitution falls sharply and never fully recovers — a drop driven as much by policy as by any change in actual prevalence. The steepest decline coincides with the 2018 passage of FOSTA-SESTA, a federal law targeting online sex work advertising that pushed the trade off-street and largely out of SFPD's incident reporting system. The data shows fewer reports, not necessarily less activity.
+          </p>
+        </div>
+
+      </div>
 
     </div>
-  </section>
 
-<!-- Body Text & Pull Quote -->
-<section class="max-w-4xl mx-auto px-8 py-32">
-    <div class="space-y-8 text-lg leading-relaxed text-on-surface-variant">
-    <p>The hourly and seasonal rhythms hold year after year with remarkable consistency. But zoom out to the full two-decade window and a different question emerges: not when crime happens, but how much — and whether the four crimes move together or apart over time.</p>
-    <blockquote class="my-16 py-8 border-l-4 border-primary pl-8 md:pl-12">
-    <p class="text-3xl md:text-5xl font-black text-primary tracking-tighter leading-tight italic">
-      "Burglary's peak hour tracks sunset almost exactly — earlier in December, later in June, as if calibrated to the last moment of usable light."
-    </p>
-    </blockquote>
-    <p>That precision is what makes these patterns worth studying over time. Each crime responds to a different trigger — light, crowds, cover of darkness — and those triggers do not shift at the same rate as the city changes around them.</p>
-    </div>
-    </section>
+  </div>
+</section>
 
 <!-- Trend Line Section (Redesigned) -->
 <section class="py-32 border-t border-surface-container bg-surface-container-low">
