@@ -136,76 +136,91 @@
 </div>
 </div>
 </section>
-<!-- Visualization 1: Redesigned Split Layout -->
+<!-- Visualization Section -->
 <section class="bg-surface-container-low py-32">
   <div class="max-w-7xl mx-auto px-8">
 
     <!-- Section Header -->
-    <div class="mb-16 max-w-3xl">
-      <h2 class="text-3xl md:text-4xl font-black tracking-tight text-on-surface mb-4">
-        Who Actually Wins the Olympics?
+    <div class="mb-14 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight text-on-surface mb-5">
+        The Olympic Hierarchy
       </h2>
-      <p class="text-on-surface-variant">
-        Before introducing any economic comparisons, this view shows the raw distribution of Olympic success — who wins, how often, and across which sports.
+
+      <p class="text-lg leading-relaxed text-on-surface-variant">
+        At first glance, Olympic success appears heavily concentrated. Between 1960 and 2016, a relatively small group of countries consistently dominated the medal table — many of them also among the world’s largest economies.
       </p>
     </div>
 
-    <!-- Main Card -->
-    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm p-6 md:p-8">
+    <!-- Visualizations -->
+    <div class="grid lg:grid-cols-2 gap-8">
 
-      <div class="grid lg:grid-cols-3 gap-10 items-start">
+      <!-- LEFT PANEL -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm overflow-hidden">
 
-          <!-- LEFT -->
-          <div class="lg:col-span-2">
-            <div class="rounded-xl overflow-hidden border border-outline-variant/10 bg-white h-fit">
-              <iframe
-                src="visualizations/olympic_medal_distribution.html"
-                class="w-full h-[520px] md:h-[580px] lg:h-[620px]"
-                frameborder="0"
-                scrolling="no">
-              </iframe>
-            </div>
-            <p class="text-xs text-on-surface-variant mt-3 italic">
-              <span class="font-semibold not-italic">Figure 1 —</span> Distribution of Olympic medals by country and sport (1960–2016). The visualization highlights concentration of success across nations and the range of Olympic disciplines included in the dataset.
-            </p>
-          </div>
-        
-          <!-- RIGHT -->
-          <div class="space-y-6 sticky top-28 self-start">
+        <div class="p-6 border-b border-outline-variant/10">
+          <h3 class="text-lg font-bold text-on-surface mb-2">
+            Top Olympic Nations
+          </h3>
 
-          <!-- Legend -->
-          <div class="p-5 bg-surface-container-low rounded-xl">
-            <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-4">
-              Medal Concentration
-            </p>
-            <div class="flex gap-2">
-              <div class="h-2 flex-1 bg-white rounded-full"></div>
-              <div class="h-2 flex-1 bg-blue-300 rounded-full"></div>
-              <div class="h-2 flex-1 bg-blue-500 rounded-full"></div>
-              <div class="h-2 flex-1 bg-indigo-500 rounded-full"></div>
-              <div class="h-2 flex-1 bg-indigo-700 rounded-full"></div>
-            </div>
-          </div>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Total Olympic medals won between 1960 and 2016.
+          </p>
+        </div>
 
-          <!-- Analysis -->
-          <div class="p-6 bg-surface-container-low rounded-xl">
-            <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">
-              Analysis
-            </p>
-            <p class="text-sm text-on-surface-variant leading-relaxed">
-              Olympic success is highly uneven. A small group of countries accounts for a large share of total medals, while the majority of nations win relatively few. This pattern is consistent across the full 1960–2016 period.
-            </p>
-            <p class="text-sm text-on-surface-variant leading-relaxed mt-4">
-              However, this raw distribution does not yet account for economic or population differences. It is a starting point: a descriptive view of who wins before introducing any notion of what “fair” or “expected” performance might look like.
-            </p>
-          </div>
+        <iframe
+          src="https://nicktahmasebi.github.io/visualizationsFinal/Top_10_Olympic_Countries_1960_2016.html"
+          class="w-full h-[520px] bg-white"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
 
+        <div class="p-6 border-t border-outline-variant/10">
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            The Olympic medal table is dominated by a small number of nations, led overwhelmingly by the United States and the Soviet Union/Russia. Most countries appear far lower in the overall hierarchy.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm overflow-hidden">
+
+        <div class="p-6 border-b border-outline-variant/10">
+          <h3 class="text-lg font-bold text-on-surface mb-2">
+            Global Economic Distribution
+          </h3>
+
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Average national GDP between 1960 and 2016.
+          </p>
+        </div>
+
+        <iframe
+          src="https://nicktahmasebi.github.io/visualizationsFinal/Average_GDP_map_1960_2016.html"
+          class="w-full h-[520px] bg-white"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+
+        <div class="p-6 border-t border-outline-variant/10">
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Economic output is similarly uneven across the world. North America, Western Europe, and East Asia account for a disproportionate share of global GDP, while much of the world operates on dramatically smaller economic scales.
+          </p>
         </div>
 
       </div>
 
     </div>
+
+    <!-- Transition -->
+    <div class="max-w-3xl mt-14">
+      <p class="text-lg leading-relaxed text-on-surface-variant">
+        The similarity between these patterns raises a broader question: how much of Olympic success can actually be explained by economic power alone?
+      </p>
+    </div>
+
   </div>
+</section>
 </section>
 <!-- Seasonal Ridgeline Section (Fixed Layout) -->
 <section class="bg-primary-container text-on-primary py-40 overflow-visible">
