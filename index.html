@@ -222,16 +222,121 @@
   </div>
 </section>
 </section>
-<!-- Seasonal Ridgeline Section (Fixed Layout) -->
+<!-- Metric Introduction Section -->
 <section class="bg-primary-container text-on-primary py-40 overflow-visible">
   <div class="max-w-7xl mx-auto px-8">
 
-      <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-4">
-        San Francisco's Night Life in Numbers — A Story over Twenty Years
+    <!-- Header -->
+    <div class="max-w-4xl mb-16">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6">
+        Measuring Olympic Efficiency
       </h2>
 
+      <p class="text-lg text-on-primary/80 leading-relaxed">
+        Raw medal counts only tell part of the story. Countries do not compete on equal economic footing — some enter the Olympics with vastly larger economies and populations than others. To account for this imbalance, this project introduces a simple comparative metric: Olympic efficiency.
+      </p>
     </div>
-  </section>
+
+    <!-- Formula Block -->
+    <div class="bg-black/10 border border-white/10 rounded-2xl p-8 md:p-10 mb-16">
+
+      <p class="uppercase tracking-[0.2em] text-sm text-on-primary/60 mb-4 font-bold">
+        Definition
+      </p>
+
+      <div class="text-2xl md:text-3xl font-black tracking-tight mb-8">
+        Efficiency Score = Actual Medals Won / Expected Medals Based on GDP
+      </div>
+
+      <p class="text-on-primary/80 text-lg leading-relaxed max-w-3xl">
+        Expected medals are calculated from a country's share of global GDP in a given Olympic year. In other words:
+      </p>
+
+      <div class="mt-8 border-l-4 border-white/20 pl-6 italic text-xl text-on-primary/90 max-w-4xl leading-relaxed">
+        “If Olympic medals were distributed purely according to economic power, how many medals would each country be expected to win?”
+      </div>
+
+    </div>
+
+    <!-- Explanation Grid -->
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+
+      <!-- LEFT -->
+      <div class="bg-black/10 border border-white/10 rounded-2xl p-8">
+
+        <p class="uppercase tracking-[0.2em] text-sm text-on-primary/60 mb-6 font-bold">
+          Example: United States (2016)
+        </p>
+
+        <div class="space-y-4 text-lg text-on-primary/90 leading-relaxed">
+
+          <p>• Roughly 25% of global GDP</p>
+          <p>• Approximately 900 Olympic medals available</p>
+          <p>• Expected medals: 225</p>
+          <p>• Actual medals won: 121</p>
+
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-2xl font-black">
+              Efficiency Score = 0.54
+            </p>
+
+            <p class="mt-2 text-on-primary/70">
+              The United States won fewer medals than its economic share alone would predict.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="bg-black/10 border border-white/10 rounded-2xl p-8">
+
+        <p class="uppercase tracking-[0.2em] text-sm text-on-primary/60 mb-6 font-bold">
+          Example: Kenya (2016)
+        </p>
+
+        <div class="space-y-4 text-lg text-on-primary/90 leading-relaxed">
+
+          <p>• Roughly 0.04% of global GDP</p>
+          <p>• Expected medals: 0.36</p>
+          <p>• Actual medals won: 13</p>
+
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-2xl font-black">
+              Efficiency Score = 36
+            </p>
+
+            <p class="mt-2 text-on-primary/70">
+              Kenya dramatically exceeded what its economic size alone would predict.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Interpretation -->
+    <div class="max-w-4xl mt-20">
+
+      <p class="uppercase tracking-[0.2em] text-sm text-on-primary/60 mb-5 font-bold">
+        Interpretation
+      </p>
+
+      <div class="space-y-4 text-lg leading-relaxed text-on-primary/85">
+        <p><span class="font-bold text-on-primary">Score = 1.0</span> → A country wins exactly the number of medals predicted by its GDP share.</p>
+
+        <p><span class="font-bold text-on-primary">Score &gt; 1.0</span> → A country outperforms its economic weight.</p>
+
+        <p><span class="font-bold text-on-primary">Score &lt; 1.0</span> → A country underperforms relative to its economic size.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 
 <!-- Trend Line Section (Redesigned) -->
