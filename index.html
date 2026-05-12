@@ -542,76 +542,109 @@
   </div>
 </section>
 
-<!-- Trend Line Section (Redesigned) -->
+<!-- Fingerprint Comparison Section -->
 <section class="bg-primary-container text-on-primary py-40 overflow-visible">
   <div class="max-w-7xl mx-auto px-8">
   
-      <!-- Header -->
-      <div class="max-w-3xl mb-16">
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-4">
-          Can Money Buy Olympic Success??
-        </h2>
-        <p class="text-on-surface-variant">
-          An investigative analysis into the correlation between national GDP and Olympic success using data from 1960 to 2016
-        </p>
-      </div>
-  
-      <!-- Layout -->
-      <div class="grid lg:grid-cols-3 gap-12 items-start">
-  
-        <!-- LEFT: GRAPH -->
-        <div class="lg:col-span-2 -ml-6">
-          <iframe
-            src="visualizations/crime_yearly_trends.html"
-            class="w-full h-[500px]"
-            frameborder="0"
-            scrolling="no">
-          </iframe>
-          <p class="text-xs text-on-surface-variant mt-3 italic"><span class="font-semibold not-italic">Figure 3 —</span> Annual incident counts for prostitution, robbery, burglary, and arson in San Francisco from 2003 to 2025. Each line represents one crime type; counts reflect reported incidents only. Data: SFPD Incident Reports.</p>
-        </div>
-  
-        <!-- RIGHT: TEXT -->
-        <div class="space-y-6">
+    <!-- Header -->
+    <div class="max-w-4xl mb-20">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-5">
+        Olympic Success Has Different Shapes
+      </h2>
 
-          <!-- How to interact -->
-          <div class="p-5 bg-surface-container-low rounded-xl">
-            <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">
+      <p class="text-lg text-on-primary/80 leading-relaxed">
+        Medal counts alone hide an important distinction: countries do not succeed in the same way. Some dominate across dozens of sports, while others concentrate their success within a small number of highly specialized events.
+      </p>
+    </div>
+  
+    <!-- Main Card -->
+    <div class="bg-black/10 border border-white/10 rounded-3xl overflow-hidden">
+
+      <div class="grid lg:grid-cols-2 items-stretch">
+
+        <!-- LEFT: TEXT -->
+        <div class="p-10 md:p-14 flex flex-col justify-center">
+
+          <p class="uppercase tracking-[0.2em] text-sm text-on-primary/60 mb-5 font-bold">
+            Comparative Fingerprints
+          </p>
+
+          <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-8">
+            Nations develop distinct Olympic identities.
+          </h3>
+
+          <div class="space-y-6 text-lg leading-relaxed text-on-primary/85">
+
+            <p>
+              This comparison tool visualizes how countries distribute their Olympic success across different sports. Rather than measuring total medals alone, it highlights where nations specialize and how concentrated their strengths become over time.
+            </p>
+
+            <p>
+              Wealthier countries often display broader Olympic “fingerprints,” competing successfully across a wide range of disciplines including swimming, athletics, rowing, cycling, and gymnastics. Smaller or lower-income nations, by contrast, frequently concentrate their success within a handful of sports.
+            </p>
+
+            <p>
+              Kenya and Ethiopia, for example, are heavily centered around distance running, while countries such as the United States, China, and Russia exhibit far wider distributions across the Olympic program.
+            </p>
+
+            <p>
+              The result reveals that Olympic dominance is not only about how many medals a country wins, but also about the diversity and structure of the sports in which those medals are earned.
+            </p>
+
+          </div>
+
+          <!-- Interaction Guide -->
+          <div class="mt-10 p-6 bg-black/10 border border-white/10 rounded-2xl">
+
+            <p class="text-xs font-bold tracking-widest uppercase text-on-primary/60 mb-4">
               How to interact
             </p>
-            <ul class="text-sm text-on-surface-variant leading-relaxed space-y-2">
-              <li><span class="font-semibold text-on-surface">Click a crime</span> in the legend to show or hide it</li>
-              <li><span class="font-semibold text-on-surface">Double-click a crime</span> to isolate it and hide the rest</li>
-              <li><span class="font-semibold text-on-surface">Show All / Hide All</span> buttons reset or clear the view</li>
-              <li><span class="font-semibold text-on-surface">Click and drag</span> on the chart to zoom into a time range</li>
-              <li><span class="font-semibold text-on-surface">Double-click the chart</span> to zoom back out</li>
-              <li><span class="font-semibold text-on-surface">Hover</span> over any point to see the exact year and count</li>
+
+            <ul class="space-y-3 text-sm text-on-primary/75 leading-relaxed">
+              <li>
+                <span class="font-semibold text-on-primary">Select countries</span> from each economic group to compare their Olympic profiles.
+              </li>
+
+              <li>
+                <span class="font-semibold text-on-primary">Hover over segments</span> to inspect sport-specific medal distributions.
+              </li>
+
+              <li>
+                <span class="font-semibold text-on-primary">Compare shape and spread</span> to see whether nations specialize narrowly or compete broadly across sports.
+              </li>
             </ul>
-          </div>
 
-          <div>
-            <p class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">
-              Analysis
-            </p>
-
-            <p class="text-sm text-on-surface-variant leading-relaxed">
-              Across twenty years, the four crimes do not move as one. Burglary and robbery track broader economic cycles, rising through the mid-2010s before pulling back later in the decade. Prostitution falls sharply and never fully recovers — a drop driven as much by shifting enforcement priorities as by any change in actual prevalence.
-            </p>
-
-            <p class="text-sm text-on-surface-variant leading-relaxed mt-4">
-              Arson stays low and flat throughout, dwarfed in volume by the other three. Isolating individual crimes using the legend makes the scale differences stark: at peak, burglary outnumbers arson by an order of magnitude.
-            </p>
-
-            <p class="text-sm text-on-surface-variant leading-relaxed mt-4">
-              Prostitution falls sharply and never fully recovers — a drop driven as much by policy as by any change in actual prevalence. The steepest decline coincides with the 2018 passage of FOSTA-SESTA, a federal law targeting online sex work advertising that pushed the trade off-street and largely out of SFPD's incident reporting system. The data shows fewer reports, not necessarily less activity.
-            </p>
           </div>
 
         </div>
-  
+
+        <!-- RIGHT: GRAPH -->
+        <div class="border-t lg:border-t-0 lg:border-l border-white/10 bg-black/5">
+
+          <div class="w-full h-full overflow-hidden">
+            <iframe
+              src="https://nicktahmasebi.github.io/visualizationsFinal/fingerprint_comparison.html"
+              class="w-[104%] h-[920px] bg-white"
+              frameborder="0"
+              scrolling="no">
+            </iframe>
+          </div>
+
+        </div>
+
       </div>
-  
+
     </div>
-  </section>
+
+    <!-- Source -->
+    <div class="mt-5 px-2">
+      <p class="text-xs text-on-primary/50 italic leading-relaxed">
+        Source: Olympic athlete data (Kaggle) &amp; World Bank GDP classifications. Medal distributions aggregated across Olympic Games from 1960–2016.
+      </p>
+    </div>
+  
+  </div>
+</section>
 <!-- Final Thought / CTA -->
 <section class="py-20 bg-surface text-center">
 <div class="max-w-2xl mx-auto px-8">
